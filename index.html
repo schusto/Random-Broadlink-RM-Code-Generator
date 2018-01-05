@@ -41,6 +41,8 @@
                 </select>
             </div>
             <button type="button" class="btn btn-success" onclick="startGenerate()">Generate</button>
+            <button type="button" class="btn btn-success" onclick="startAnalyzeNexa()">Analyze Nexa</button>
+            <button type="button" class="btn btn-success" onclick="startGenerateNexa()">Generate Nexa</button>
         </div>
     </div>
 
@@ -74,7 +76,25 @@
                 <br><label for="repeats">Current Repeats:</label>
                 <b><div id="repeats" placeholder="14 (max 255)" style="width: 10rem;" >0</div></b>
             </div>
+            <div class="form-group">
+                <br>
+                <label for="NexaID">Controller ID:</label>
+                <input type="text" class="form-control" id="id" placeholder="Controller Code" style="width: 10rem;">
+                <br>
+                <label for="NexaGroup">Group:</label>
+                <input type="text" class="form-control" id="groupflag" style="width: 10rem;">
+                <br>
+                <label for="NexaOnOff">On/Off:</label>
+                <input type="text" class="form-control" id="onoff" style="width: 10rem;">
+                <br>
+                <label for="NexaDevice">Device:</label>
+                <input type="text" class="form-control" id="device" style="width: 10rem;">
+                <label for="NexaDevice">Dim:</label>
+                <input type="text" class="form-control" id="dim" style="width: 10rem;">
 
+                <br><label for="repeats">Current Repeats:</label>
+                <b><div id="repeats" placeholder="14 (max 255)" style="width: 10rem;" >0</div></b>
+            </div>
                 <input type="text" class="form-control" id="newrepeat" placeholder="New Repeats (max 255)" style="width: 13rem;">
                 <br>
                 <button type="button" class="btn btn-success" onclick="generateNewRepeat()">Generate</button>
