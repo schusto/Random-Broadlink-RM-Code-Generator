@@ -67,7 +67,26 @@ function getNewCode(b64, repeats){
 
 }
 
-
+function startAnalyzeNexa(){
+  var code = $("#usercode").val();
+  var hex = base64ToHex(code).replace(/ /g,'');
+  var message = hex.substr(4,2);
+  var bin = hexToBin(message);
+  var id =  bin.substr(0,26);
+  var groupflag = bin.substr(26,1);
+  var onoff = bin.substr(27,1);
+  var device = bin.substr(28,4);
+  var dim = bin.substr(32,4)
+  $("#id").val(id);
+}
+/* NEXA:
+ * The actual message is 32 bits of data:
+ * bits 0-25: the group code - a 26bit number assigned to controllers.
+ * bit 26: group flag
+ * bit 27: on/off/dim flag
+ * bits 28-31: the device code - 4bit number.
+ * bits 32-35: the dim level - 4bit number.
+ */
 
 /*
 PROTOCOL:
